@@ -1,7 +1,5 @@
 package be.aca.liferay.hook.filter;
 
-import org.apache.commons.lang3.StringUtils;
-
 import javax.servlet.*;
 import java.io.IOException;
 
