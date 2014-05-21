@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hook PUBLIC "-//Liferay//DTD Hook 6.2.0//EN" "http://www.liferay.com/dtd/liferay-hook_6_2_0.dtd">
+
+<hook>
+	<servlet-filter>
+		<servlet-filter-name>NTLM Bypass Filter</servlet-filter-name>
+		<servlet-filter-impl>be.aca.liferay.hook.filter.NtlmBypassFilter</servlet-filter-impl>
+	</servlet-filter>
+	<servlet-filter-mapping>
+		<servlet-filter-name>NTLM Bypass Filter</servlet-filter-name>
+		<before-filter>Auto Login Filter</before-filter>
+		<url-pattern>/c/portal/fckeditor</url-pattern>
+		<url-pattern>/c/portal/login</url-pattern>
+		<url-pattern>/c/portal/render_portlet</url-pattern>
+		<url-pattern>/c/portal/update_password</url-pattern>
+		<url-pattern>/c/portal/update_reminder_query</url-pattern>
+		<url-pattern>/documents/*</url-pattern>
+		<url-pattern>/group/*</url-pattern>
+		<url-pattern>/user/*</url-pattern>
+		<url-pattern>/web/*</url-pattern>
+		<url-pattern>/widget/*</url-pattern>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>REQUEST</dispatcher>
+	</servlet-filter-mapping>
+</hook>
